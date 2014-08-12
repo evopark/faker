@@ -75,3 +75,6 @@ nl:
 
     phone_number:
       formats: ["(####) ######", "##########", "06########", "06 #### ####"]
+
+    bank_account:
+      iban_format: 'NL__[A-Z]{4}\d{10}'
