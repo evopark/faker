@@ -70,3 +70,6 @@ sk:
 
     phone_number:
       formats: ['09## ### ###', '0## #### ####', '0# #### ####', '+421 ### ### ###']
+
+    bank_account:
+      iban_format: 'SK__\d{20}'

@@ -74,3 +74,6 @@ sv:
       suffix: [IF, FF, BK, HK, AIF, SK, FC, SK, BoIS, FK, BIS, FIF, IK]
       name:
         - "#{Address.city} #{suffix}"
+
+    bank_account:
+      iban_format: 'SE__\d{20}'
