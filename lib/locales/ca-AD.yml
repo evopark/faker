@@ -1,0 +1,3 @@
+ca-AD:
+    bank_account:
+      iban_format: 'AD__\d{8}\w{12}'

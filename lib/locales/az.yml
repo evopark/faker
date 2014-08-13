@@ -1,0 +1,3 @@
+az:
+    bank_account:
+      iban_format: 'AZ__\w{4}\d{20}'

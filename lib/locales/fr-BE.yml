@@ -1,0 +1,3 @@
+fr-BE:
+    bank_account:
+      iban_format: 'BE__\d{12}'

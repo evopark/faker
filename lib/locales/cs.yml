@@ -1,0 +1,3 @@
+cs:
+    bank_account:
+      iban_format: 'CZ__\d{20}'

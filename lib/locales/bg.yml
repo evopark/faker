@@ -1,0 +1,3 @@
+bg:
+    bank_account:
+      iban_format: 'BG__[A-Z]{4}\d{6}\w{8}'

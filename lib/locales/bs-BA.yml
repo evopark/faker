@@ -1,0 +1,3 @@
+bs-BA:
+    bank_account:
+      iban_format: 'AZ__\d{16}'
