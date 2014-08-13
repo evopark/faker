@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
-class TestFakerBankAccount < Test::Unit::TestCase
+class TestFakerFinance < Test::Unit::TestCase
   def setup
-    @tester = Faker::BankAccount
+    @tester = Faker::Finance
   end
 
   def test_iban
@@ -43,6 +43,11 @@ class TestFakerBankAccount < Test::Unit::TestCase
       iban = @tester.iban
       assert iban.match(/^NL\d{2}[A-Z]{4}\d{10}$/i)
     end
+  end
+
+  def test_bic
+    bic = @tester.bic
+    assert bic.match(/^[A-Z]{6}\w{2}(\w{3})?$/i)
   end
 
 end

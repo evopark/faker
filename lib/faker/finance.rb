@@ -21,6 +21,26 @@ module Faker
         template.gsub! 'L', luhn_digit.to_s
         template
       end
+
+      # generates an International Bank Account Number
+      # https://en.wikipedia.org/wiki/International_Bank_Account_Number
+      def iban
+        iban_format = translate('faker.bank_account.iban_format')
+        raise NotImplementedError("Locale #{locale} not yet supported for IBAN generation") unless iban_format
+        iban = regexify(iban_format)
+        calc = iban.gsub(/_/, '0') # Initialize checksum to 0
+        calc = calc[(4..-1)] + calc[0,4] # move first 4 chars to end
+        calc = calc.upcase.gsub(/[A-Z]/i) { |s| s.ord-55 } # replace letters by numbers
+        checksum = 98 - (calc.to_i % 97)
+        iban.gsub(/_+/, sprintf('%02d', checksum))
+      end
+
+      # generates a bank identifier code
+      # https://en.wikipedia.org/wiki/ISO_9362
+      def bic
+        regexify('[A-Z]{4}__\w{2}(\w{3})?').upcase.gsub(/__/, fetch('address.country_code'))
+      end
+
     end
   end
 end
