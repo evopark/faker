@@ -136,9 +136,27 @@ Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
 
 ```
 
+###Faker::Finance
+-----------------
+
+```ruby
+
+Faker::Finance.credit_card #=> "3748-500157-22768"
+
+Faker::Finance.credit_card(:visa) #=> "4853-7214-6023-5709"
+
+# Only for countries that have IBAN (US does not)
+I18n.with_locale(:de) do
+  Faker::Finance.iban #=> "DE56043639461305015857"
+end
+
+# Probably not an existing BIC, but valid format
+Faker::Finance.bic #=> "HRHKCZDB"
+
+```
 
 ###Faker::Internet
----------------
+------------------
 
 ```ruby
 # Optional argument name=nil
